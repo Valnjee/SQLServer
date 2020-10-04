@@ -1,0 +1,107 @@
+SELECT
+    product_name,
+    list_price
+FROM
+    production.products
+WHERE
+    list_price > (
+        SELECT
+            AVG (list_price)
+        FROM
+            production.products
+        WHERE
+            brand_id IN (
+                SELECT
+                    brand_id
+                FROM
+                    production.brands
+                WHERE
+                    brand_name = 'Strider'
+                OR brand_name = 'Trek'
+            )
+    )
+ORDER BY
+    list_price;
+    
+    Results
+Product_name                                 List_price    
+    Surly Karate Monkey 27.5+ Frameset - 2017	2499.99
+Trek Fuel EX 7 29 - 2018	2499.99
+Surly Krampus Frameset - 2018	2499.99
+Surly Troll Frameset - 2018	2499.99
+Trek Domane SL 5 Disc Women's - 2018	2499.99
+Trek 1120 - 2018	2499.99
+Trek Domane SL 5 Disc - 2018	2499.99
+Heller Bloodhound Trail - 2018	2599.00
+Heller Shagamaw GX1 - 2018	2599.00
+Trek Domane S 5 Disc - 2017	2599.99
+Electra Townie Go! 8i Ladies' - 2018	2599.99
+Electra Townie Go! 8i - 2017/2018	2599.99
+Electra Townie Go! 8i - 2017/2018	2599.99
+Electra Townie Go! 8i Ladies' - 2018	2599.99
+Electra Townie Go! 8i - 2017/2018	2599.99
+Trek Domane S 6 - 2017	2699.99
+Trek Lift+ - 2018	2799.99
+Trek Conduit+ - 2018	2799.99
+Trek Neko+ - 2018	2799.99
+Trek Lift+ Lowstep - 2018	2799.99
+Trek Dual Sport+ - 2018	2799.99
+Electra Loft Go! 8i - 2018	2799.99
+Trek Checkpoint SL 5 Women's - 2019	2799.99
+Trek Fuel EX 8 29 - 2016	2899.99
+Trek Conduit+ - 2016	2999.99
+Trek Remedy 7 27.5 - 2018	2999.99
+Electra Townie Commute Go! - 2018	2999.99
+Electra Townie Commute Go! Ladies' - 2018	2999.99
+Electra Townie Commute Go! - 2018	2999.99
+Electra Townie Commute Go! Ladies' - 2018	2999.99
+Trek Emonda SL 6 Disc - 2018	2999.99
+Trek Crockett 7 Disc - 2018	2999.99
+Trek Domane SL 6 - 2018	3199.99
+Trek Domane ALR Disc Frameset - 2018	3199.99
+Trek Domane ALR Frameset - 2018	3199.99
+Trek Domane SLR Disc Frameset - 2018	3199.99
+Trek Domane SLR Frameset - 2018	3199.99
+Trek Madone 9 Frameset - 2018	3199.99
+Trek Fuel EX 8 29 XT - 2018	3199.99
+Trek Fuel EX 8 29 - 2018	3199.99
+Trek Domane SL Disc Frameset - 2017	3199.99
+Trek Checkpoint ALR Frameset - 2019	3199.99
+Trek Boone 5 Disc - 2018	3299.99
+Trek Powerfly 5 - 2018	3499.99
+Trek XM700+ - 2018	3499.99
+Trek Powerfly 5 Women's - 2018	3499.99
+Trek XM700+ Lowstep - 2018	3499.99
+Trek Domane SL 6 Disc - 2018	3499.99
+Trek Boone 7 - 2017	3499.99
+Trek Boone Race Shop Limited - 2017	3499.99
+Trek Domane SL 6 - 2017	3499.99
+Trek Super Commuter+ 7 - 2018	3599.99
+Trek Checkpoint SL 6 - 2019	3799.99
+Trek Boone 7 Disc - 2018	3999.99
+Trek Slash 8 27.5 - 2016	3999.99
+Trek Powerfly 5 FS - 2018	4499.99
+Trek CrossRip+ - 2018	4499.99
+Trek Emonda SL 7 - 2018	4499.99
+Trek Emonda SLR 6 - 2018	4499.99
+Trek Powerfly 7 FS - 2018	4999.99
+Trek Super Commuter+ 8S - 2018	4999.99
+Trek Fuel EX 9.8 29 - 2017	4999.99
+Trek Powerfly 8 FS Plus - 2017	4999.99
+Trek Madone 9.2 - 2017	4999.99
+Trek Domane SL 7 Women's - 2018	4999.99
+Trek Domane SLR 6 - 2018	4999.99
+Trek Remedy 9.8 27.5 - 2018	4999.99
+Trek Fuel EX 9.8 27.5 Plus - 2017	5299.99
+Trek Remedy 9.8 - 2017	5299.99
+Trek Domane SLR 6 Disc - 2017	5499.99
+Trek Domane SL 8 Disc - 2018	5499.99
+Trek Domane SLR 6 Disc Women's - 2018	5499.99
+Trek Domane SLR 6 Disc - 2018	5499.99
+Trek Silque SLR 7 Women's - 2017	5999.99
+Trek Silque SLR 8 Women's - 2017	6499.99
+Trek Domane SL Frameset - 2018	6499.99
+Trek Domane SL Frameset Women's - 2018	6499.99
+Trek Emonda SLR 8 - 2018	6499.99
+Trek Domane SLR 8 Disc - 2018	7499.99
+Trek Domane SLR 9 Disc - 2018	11999.99
