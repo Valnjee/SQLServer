@@ -1,0 +1,110 @@
+CREATE TABLE sales.taxes (
+	tax_id INT PRIMARY KEY IDENTITY (1, 1),
+	state VARCHAR (50) NOT NULL UNIQUE,
+	state_tax_rate DEC (3, 2),
+	avg_local_tax_rate DEC (3, 2),
+	combined_rate AS state_tax_rate + avg_local_tax_rate,
+	max_local_tax_rate DEC (3, 2),
+	updated_at datetime
+);
+
+Second, insert rows to newly created table
+
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Alabama',0.04,0.05,0.07);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Alaska',0,0.01,0.07);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Arizona',0.05,0.02,0.05);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Arkansas',0.06,0.02,0.05);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('California',0.07,0.01,0.02);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Colorado',0.02,0.04,0.08);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Connecticut',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Delaware',0,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Florida',0.06,0,0.02);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Georgia',0.04,0.03,0.04);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Hawaii',0.04,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Idaho',0.06,0,0.03);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Illinois',0.06,0.02,0.04);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Indiana',0.07,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Iowa',0.06,0,0.01);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Kansas',0.06,0.02,0.04);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Kentucky',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Louisiana',0.05,0.04,0.07);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Maine',0.05,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Maryland',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Massachusetts',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Michigan',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Minnesota',0.06,0,0.01);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Mississippi',0.07,0,0.01);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Missouri',0.04,0.03,0.05);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Montana',0,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Nebraska',0.05,0.01,0.02);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Nevada',0.06,0.01,0.01);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('New Hampshire',0,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('New Jersey',0.06,0,0);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('New Mexico',0.05,0.02,0.03);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('New York',0.04,0.04,0.04);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('North Carolina',0.04,0.02,0.02);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('North Dakota',0.05,0.01,0.03);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Ohio',0.05,0.01,0.02);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Oklahoma',0.04,0.04,0.06);
+INSERT INTO sales.taxes(state,state_tax_rate,avg_local_tax_rate,max_local_tax_rate) VALUES('Oregon',0,0,0);
+
+Now update a single column
+
+UPDATE sales.taxes
+SET updated_at = GETDATE();
+
+SELECT * FROM sales.taxes;
+Result
+
+tax_id  state  state_tax_rate  avg_local_tax_rate  combined_rate  max_local_tax_rate  update_at
+1	Alabama	0.04	0.05	0.09	0.07	2020-07-02 15:32:32.753
+2	Alaska	0.00	0.01	0.01	0.07	2020-07-02 15:32:32.753
+3	Arizona	0.05	0.02	0.07	0.05	2020-07-02 15:32:32.753
+4	Arkansas	0.06	0.02	0.08	0.05	2020-07-02 15:32:32.753
+5	California	0.07	0.01	0.08	0.02	2020-07-02 15:32:32.753
+6	Colorado	0.02	0.04	0.06	0.08	2020-07-02 15:32:32.753
+7	Connecticut	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+8	Delaware	0.00	0.00	0.00	0.00	2020-07-02 15:32:32.753
+9	Florida	0.06	0.00	0.06	0.02	2020-07-02 15:32:32.753
+10	Georgia	0.04	0.03	0.07	0.04	2020-07-02 15:32:32.753
+11	Hawaii	0.04	0.00	0.04	0.00	2020-07-02 15:32:32.753
+12	Idaho	0.06	0.00	0.06	0.03	2020-07-02 15:32:32.753
+13	Illinois	0.06	0.02	0.08	0.04	2020-07-02 15:32:32.753
+14	Indiana	0.07	0.00	0.07	0.00	2020-07-02 15:32:32.753
+15	Iowa	0.06	0.01	0.07	0.03	2020-07-02 15:32:32.753
+16	Kansas	0.06	0.02	0.08	0.04	2020-07-02 15:32:32.753
+17	Kentucky	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+18	Louisiana	0.05	0.04	0.09	0.07	2020-07-02 15:32:32.753
+19	Maine	0.05	0.00	0.05	0.00	2020-07-02 15:32:32.753
+20	Maryland	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+21	Massachusetts	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+22	Michigan	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+23	Minnesota	0.06	0.01	0.07	0.03	2020-07-02 15:32:32.753
+24	Mississippi	0.07	0.01	0.08	0.03	2020-07-02 15:32:32.753
+25	Missouri	0.04	0.03	0.07	0.05	2020-07-02 15:32:32.753
+26	Montana	0.00	0.00	0.00	0.00	2020-07-02 15:32:32.753
+27	Nebraska	0.05	0.01	0.06	0.02	2020-07-02 15:32:32.753
+28	Nevada	0.06	0.02	0.08	0.03	2020-07-02 15:32:32.753
+29	New Hampshire	0.00	0.00	0.00	0.00	2020-07-02 15:32:32.753
+30	New Jersey	0.06	0.00	0.06	0.00	2020-07-02 15:32:32.753
+31	New Mexico	0.05	0.02	0.07	0.03	2020-07-02 15:32:32.753
+32	New York	0.04	0.04	0.08	0.04	2020-07-02 15:32:32.753
+33	North Carolina	0.04	0.02	0.06	0.02	2020-07-02 15:32:32.753
+34	North Dakota	0.05	0.01	0.06	0.03	2020-07-02 15:32:32.753
+35	Ohio	0.05	0.01	0.06	0.02	2020-07-02 15:32:32.753
+36	Oklahoma	0.04	0.04	0.08	0.06	2020-07-02 15:32:32.753
+37	Oregon	0.00	0.00	0.00	0.00	2020-07-02 15:32:32.753
+38	Pennsylvania	0.06	0.00	0.06	0.02	2020-07-02 15:32:32.753
+39	Rhode Island	0.07	0.00	0.07	0.00	2020-07-02 15:32:32.753
+40	South Carolina	0.06	0.01	0.07	0.02	2020-07-02 15:32:32.753
+41	South Dakota	0.04	0.01	0.05	0.04	2020-07-02 15:32:32.753
+42	Tennessee	0.07	0.02	0.09	0.02	2020-07-02 15:32:32.753
+43	Texas	0.06	0.01	0.07	0.02	2020-07-02 15:32:32.753
+44	Utah	0.05	0.00	0.05	0.02	2020-07-02 15:32:32.753
+45	Vermont	0.06	0.01	0.07	0.03	2020-07-02 15:32:32.753
+46	Virginia	0.05	0.00	0.05	0.00	2020-07-02 15:32:32.753
+47	Washington	0.06	0.02	0.08	0.03	2020-07-02 15:32:32.753
+48	West Virginia	0.06	0.01	0.07	0.03	2020-07-02 15:32:32.753
+49	Wisconsin	0.05	0.01	0.06	0.03	2020-07-02 15:32:32.753
+50	Wyoming	0.04	0.01	0.05	0.02	2020-07-02 15:32:32.753
+51	D.C.	0.05	0.00	0.05	0.00	2020-07-02 15:32:32.753
