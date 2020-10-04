@@ -1,0 +1,73 @@
+SELECT
+    b.brand_name AS brand,
+    c.category_name AS category,
+    p.model_year,
+    round(
+        SUM (
+            quantity * i.list_price * (1 - discount)
+        ),
+        0
+    ) sales INTO sales.sales_summary
+FROM
+    sales.order_items i
+INNER JOIN production.products p ON p.product_id = i.product_id
+INNER JOIN production.brands b ON b.brand_id = p.brand_id
+INNER JOIN production.categories c ON c.category_id = p.category_id
+GROUP BY
+    b.brand_name,
+    c.category_name,
+    p.model_year
+ORDER BY
+    b.brand_name,
+    c.category_name,
+    p.model_year;
+    
+ 
+//The rollup query is
+
+SELECT
+    brand,
+    category,
+    SUM (sales) sales
+FROM
+    sales.sales_summary
+GROUP BY
+    ROLLUP(brand, category);
+    
+    
+//Result
+
+Brand   category          sales
+Electra	Children Bicycles	207606.0000
+Electra	Comfort Bicycles	271542.0000
+Electra	Cruisers Bicycles	694909.0000
+Electra	Electric Bikes	31264.0000
+Electra	NULL	1205321.0000
+Haro	Children Bicycles	29240.0000
+Haro	Mountain Bikes	156145.0000
+Haro	NULL	185385.0000
+Heller	Mountain Bikes	171459.0000
+Heller	NULL	171459.0000
+Pure Cycles	Cruisers Bicycles	149476.0000
+Pure Cycles	NULL	149476.0000
+Ritchey	Mountain Bikes	78899.0000
+Ritchey	NULL	78899.0000
+Strider	Children Bicycles	4320.0000
+Strider	NULL	4320.0000
+Sun Bicycles	Children Bicycles	2328.0000
+Sun Bicycles	Comfort Bicycles	122478.0000
+Sun Bicycles	Cruisers Bicycles	150647.0000
+Sun Bicycles	Electric Bikes	47049.0000
+Sun Bicycles	Mountain Bikes	19492.0000
+Sun Bicycles	NULL	341994.0000
+Surly	Cyclocross Bicycles	439644.0000
+Surly	Mountain Bikes	441383.0000
+Surly	Road Bikes	68478.0000
+Surly	NULL	949505.0000
+Trek	Children Bicycles	48695.0000
+Trek	Cyclocross Bicycles	271367.0000
+Trek	Electric Bikes	838372.0000
+Trek	Mountain Bikes	1847700.0000
+Trek	Road Bikes	1596620.0000
+Trek	NULL	4602754.0000
+NULL	NULL	7689113.0000
