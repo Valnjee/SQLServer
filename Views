@@ -1,0 +1,337 @@
+CREATE VIEW sales.product_info
+AS
+SELECT
+    product_name, 
+    brand_name, 
+    list_price
+FROM
+    production.products p
+INNER JOIN production.brands b 
+        ON b.brand_id = p.brand_id;
+        
+        
+SELECT * FROM sales.product_info;
+
+Results
+product_name   brand_name    list_price
+Trek 820 - 2016	Trek	379.99
+Ritchey Timberwolf Frameset - 2016	Ritchey	749.99
+Surly Wednesday Frameset - 2016	Surly	999.99
+Trek Fuel EX 8 29 - 2016	Trek	2899.99
+Heller Shagamaw Frame - 2016	Heller	1320.99
+Surly Ice Cream Truck Frameset - 2016	Surly	469.99
+Trek Slash 8 27.5 - 2016	Trek	3999.99
+Trek Remedy 29 Carbon Frameset - 2016	Trek	1799.99
+Trek Conduit+ - 2016	Trek	2999.99
+Surly Straggler - 2016	Surly	1549.00
+Surly Straggler 650b - 2016	Surly	1680.99
+Electra Townie Original 21D - 2016	Electra	549.99
+Electra Cruiser 1 (24-Inch) - 2016	Electra	269.99
+Electra Girl's Hawaii 1 (16-inch) - 2015/2016	Electra	269.99
+Electra Moto 1 - 2016	Electra	529.99
+Electra Townie Original 7D EQ - 2016	Electra	599.99
+Pure Cycles Vine 8-Speed - 2016	Pure Cycles	429.00
+Pure Cycles Western 3-Speed - Women's - 2015/2016	Pure Cycles	449.00
+Pure Cycles William 3-Speed - 2016	Pure Cycles	449.00
+Electra Townie Original 7D EQ - Women's - 2016	Electra	599.99
+Electra Cruiser 1 (24-Inch) - 2016	Electra	269.99
+Electra Girl's Hawaii 1 (16-inch) - 2015/2016	Electra	269.99
+Electra Girl's Hawaii 1 (20-inch) - 2015/2016	Electra	299.99
+Electra Townie Original 21D - 2016	Electra	549.99
+Electra Townie Original 7D - 2015/2016	Electra	499.99
+Electra Townie Original 7D EQ - 2016	Electra	599.99
+Surly Big Dummy Frameset - 2017	Surly	999.99
+Surly Karate Monkey 27.5+ Frameset - 2017	Surly	2499.99
+Trek X-Caliber 8 - 2017	Trek	999.99
+Surly Ice Cream Truck Frameset - 2017	Surly	999.99
+Surly Wednesday - 2017	Surly	1632.99
+Trek Farley Alloy Frameset - 2017	Trek	469.99
+Surly Wednesday Frameset - 2017	Surly	469.99
+Trek Session DH 27.5 Carbon Frameset - 2017	Trek	469.99
+Sun Bicycles Spider 3i - 2017	Sun Bicycles	832.99
+Surly Troll Frameset - 2017	Surly	832.99
+Haro Flightline One ST - 2017	Haro	379.99
+Haro Flightline Two 26 Plus - 2017	Haro	549.99
+Trek Stache 5 - 2017	Trek	1499.99
+Trek Fuel EX 9.8 29 - 2017	Trek	4999.99
+Haro Shift R3 - 2017	Haro	1469.99
+Trek Fuel EX 5 27.5 Plus - 2017	Trek	2299.99
+Trek Fuel EX 9.8 27.5 Plus - 2017	Trek	5299.99
+Haro SR 1.1 - 2017	Haro	539.99
+Haro SR 1.2 - 2017	Haro	869.99
+Haro SR 1.3 - 2017	Haro	1409.99
+Trek Remedy 9.8 - 2017	Trek	5299.99
+Trek Emonda S 4 - 2017	Trek	1499.99
+Trek Domane SL 6 - 2017	Trek	3499.99
+Trek Silque SLR 7 Women's - 2017	Trek	5999.99
+Trek Silque SLR 8 Women's - 2017	Trek	6499.99
+Surly Steamroller - 2017	Surly	875.99
+Surly Ogre Frameset - 2017	Surly	749.99
+Trek Domane SL Disc Frameset - 2017	Trek	3199.99
+Trek Domane S 6 - 2017	Trek	2699.99
+Trek Domane SLR 6 Disc - 2017	Trek	5499.99
+Trek Emonda S 5 - 2017	Trek	1999.99
+Trek Madone 9.2 - 2017	Trek	4999.99
+Trek Domane S 5 Disc - 2017	Trek	2599.99
+Sun Bicycles ElectroLite - 2017	Sun Bicycles	1559.99
+Trek Powerfly 8 FS Plus - 2017	Trek	4999.99
+Trek Boone 7 - 2017	Trek	3499.99
+Trek Boone Race Shop Limited - 2017	Trek	3499.99
+Electra Townie Original 7D - 2017	Electra	489.99
+Sun Bicycles Lil Bolt Type-R - 2017	Sun Bicycles	346.99
+Sun Bicycles Revolutions 24 - 2017	Sun Bicycles	250.99
+Sun Bicycles Revolutions 24 - Girl's - 2017	Sun Bicycles	250.99
+Sun Bicycles Cruz 3 - 2017	Sun Bicycles	449.99
+Sun Bicycles Cruz 7 - 2017	Sun Bicycles	416.99
+Electra Amsterdam Original 3i - 2015/2017	Electra	659.99
+Sun Bicycles Atlas X-Type - 2017	Sun Bicycles	416.99
+Sun Bicycles Biscayne Tandem 7 - 2017	Sun Bicycles	619.99
+Sun Bicycles Brickell Tandem 7 - 2017	Sun Bicycles	749.99
+Electra Cruiser Lux 1 - 2017	Electra	439.99
+Electra Cruiser Lux Fat Tire 1 Ladies - 2017	Electra	599.99
+Electra Girl's Hawaii 1 16" - 2017	Electra	299.99
+Electra Glam Punk 3i Ladies' - 2017	Electra	799.99
+Sun Bicycles Biscayne Tandem CB - 2017	Sun Bicycles	647.99
+Sun Bicycles Boardwalk (24-inch Wheels) - 2017	Sun Bicycles	402.99
+Sun Bicycles Brickell Tandem CB - 2017	Sun Bicycles	761.99
+Electra Amsterdam Fashion 7i Ladies' - 2017	Electra	1099.99
+Electra Amsterdam Original 3i Ladies' - 2017	Electra	659.99
+Trek Boy's Kickster - 2015/2017	Trek	149.99
+Sun Bicycles Lil Kitt'n - 2017	Sun Bicycles	109.99
+Haro Downtown 16 - 2017	Haro	329.99
+Trek Girl's Kickster - 2017	Trek	149.99
+Trek Precaliber 12 Boys - 2017	Trek	189.99
+Trek Precaliber 12 Girls - 2017	Trek	189.99
+Trek Precaliber 16 Boys - 2017	Trek	209.99
+Trek Precaliber 16 Girls - 2017	Trek	209.99
+Trek Precaliber 24 (21-Speed) - Girls - 2017	Trek	349.99
+Haro Shredder 20 - 2017	Haro	209.99
+Haro Shredder 20 Girls - 2017	Haro	209.99
+Haro Shredder Pro 20 - 2017	Haro	249.99
+Electra Girl's Hawaii 1 16" - 2017	Electra	299.99
+Electra Moto 3i (20-inch) - Boy's - 2017	Electra	349.99
+Electra Savannah 3i (20-inch) - Girl's - 2017	Electra	349.99
+Electra Straight 8 3i (20-inch) - Boy's - 2017	Electra	489.99
+Electra Sugar Skulls 1 (20-inch) - Girl's - 2017	Electra	299.99
+Electra Townie 3i EQ (20-inch) - Boys' - 2017	Electra	489.99
+Electra Townie 7D (20-inch) - Boys' - 2017	Electra	339.99
+Electra Townie Original 7D - 2017	Electra	489.99
+Sun Bicycles Streamway 3 - 2017	Sun Bicycles	551.99
+Sun Bicycles Streamway - 2017	Sun Bicycles	481.99
+Sun Bicycles Streamway 7 - 2017	Sun Bicycles	533.99
+Sun Bicycles Cruz 3 - 2017	Sun Bicycles	449.99
+Sun Bicycles Cruz 7 - 2017	Sun Bicycles	416.99
+Sun Bicycles Cruz 3 - Women's - 2017	Sun Bicycles	449.99
+Sun Bicycles Cruz 7 - Women's - 2017	Sun Bicycles	416.99
+Sun Bicycles Drifter 7 - 2017	Sun Bicycles	470.99
+Sun Bicycles Drifter 7 - Women's - 2017	Sun Bicycles	470.99
+Trek 820 - 2018	Trek	379.99
+Trek Marlin 5 - 2018	Trek	489.99
+Trek Marlin 6 - 2018	Trek	579.99
+Trek Fuel EX 8 29 - 2018	Trek	3199.99
+Trek Marlin 7 - 2017/2018	Trek	749.99
+Trek Ticket S Frame - 2018	Trek	1469.99
+Trek X-Caliber 8 - 2018	Trek	999.99
+Trek Kids' Neko - 2018	Trek	469.99
+Trek Fuel EX 7 29 - 2018	Trek	2499.99
+Surly Krampus Frameset - 2018	Surly	2499.99
+Surly Troll Frameset - 2018	Surly	2499.99
+Trek Farley Carbon Frameset - 2018	Trek	999.99
+Surly Krampus - 2018	Surly	1499.00
+Trek Kids' Dual Sport - 2018	Trek	469.99
+Surly Big Fat Dummy Frameset - 2018	Surly	469.99
+Surly Pack Rat Frameset - 2018	Surly	469.99
+Surly ECR 27.5 - 2018	Surly	1899.00
+Trek X-Caliber 7 - 2018	Trek	919.99
+Trek Stache Carbon Frameset - 2018	Trek	919.99
+Heller Bloodhound Trail - 2018	Heller	2599.00
+Trek Procal AL Frameset - 2018	Trek	1499.99
+Trek Procaliber Frameset - 2018	Trek	1499.99
+Trek Remedy 27.5 C Frameset - 2018	Trek	1499.99
+Trek X-Caliber Frameset - 2018	Trek	1499.99
+Trek Procaliber 6 - 2018	Trek	1799.99
+Heller Shagamaw GX1 - 2018	Heller	2599.00
+Trek Fuel EX 5 Plus - 2018	Trek	2249.99
+Trek Remedy 7 27.5 - 2018	Trek	2999.99
+Trek Remedy 9.8 27.5 - 2018	Trek	4999.99
+Trek Stache 5 - 2018	Trek	1599.99
+Trek Fuel EX 8 29 XT - 2018	Trek	3199.99
+Trek Domane ALR 3 - 2018	Trek	1099.99
+Trek Domane ALR 4 Disc - 2018	Trek	1549.99
+Trek Domane ALR 5 Disc - 2018	Trek	1799.99
+Trek Domane SLR 6 - 2018	Trek	4999.99
+Trek Domane ALR 5 Gravel - 2018	Trek	1799.99
+Trek Domane SL 8 Disc - 2018	Trek	5499.99
+Trek Domane SLR 8 Disc - 2018	Trek	7499.99
+Trek Emonda SL 7 - 2018	Trek	4499.99
+Trek Domane ALR 4 Disc Women's - 2018	Trek	1549.99
+Trek Domane SL 5 Disc Women's - 2018	Trek	2499.99
+Trek Domane SL 7 Women's - 2018	Trek	4999.99
+Trek Domane SLR 6 Disc Women's - 2018	Trek	5499.99
+Trek Domane SLR 9 Disc - 2018	Trek	11999.99
+Trek Domane SL Frameset - 2018	Trek	6499.99
+Trek Domane SL Frameset Women's - 2018	Trek	6499.99
+Trek CrossRip 1 - 2018	Trek	959.99
+Trek Emonda ALR 6 - 2018	Trek	2299.99
+Trek Emonda SLR 6 - 2018	Trek	4499.99
+Surly ECR - 2018	Surly	1899.00
+Trek Emonda SL 6 Disc - 2018	Trek	2999.99
+Surly Pack Rat - 2018	Surly	1349.00
+Surly Straggler 650b - 2018	Surly	1549.00
+Trek 1120 - 2018	Trek	2499.99
+Trek Domane AL 2 Women's - 2018	Trek	749.99
+Surly ECR Frameset - 2018	Surly	749.99
+Surly Straggler - 2018	Surly	1549.00
+Trek Emonda SLR 8 - 2018	Trek	6499.99
+Trek CrossRip 2 - 2018	Trek	1299.99
+Trek Domane SL 6 - 2018	Trek	3199.99
+Trek Domane ALR Disc Frameset - 2018	Trek	3199.99
+Trek Domane ALR Frameset - 2018	Trek	3199.99
+Trek Domane SLR Disc Frameset - 2018	Trek	3199.99
+Trek Domane SLR Frameset - 2018	Trek	3199.99
+Trek Madone 9 Frameset - 2018	Trek	3199.99
+Trek Domane SLR 6 Disc - 2018	Trek	5499.99
+Trek Domane AL 2 - 2018	Trek	749.99
+Trek Domane AL 3 - 2018	Trek	919.99
+Trek Domane AL 3 Women's - 2018	Trek	919.99
+Trek Domane SL 5 - 2018	Trek	2199.99
+Trek Domane SL 5 Disc - 2018	Trek	2499.99
+Trek Domane SL 5 Women's - 2018	Trek	2199.99
+Trek Domane SL 6 Disc - 2018	Trek	3499.99
+Trek Conduit+ - 2018	Trek	2799.99
+Trek CrossRip+ - 2018	Trek	4499.99
+Trek Neko+ - 2018	Trek	2799.99
+Trek XM700+ Lowstep - 2018	Trek	3499.99
+Trek Lift+ Lowstep - 2018	Trek	2799.99
+Trek Dual Sport+ - 2018	Trek	2799.99
+Electra Loft Go! 8i - 2018	Electra	2799.99
+Electra Townie Go! 8i - 2017/2018	Electra	2599.99
+Trek Lift+ - 2018	Trek	2799.99
+Trek XM700+ - 2018	Trek	3499.99
+Electra Townie Go! 8i Ladies' - 2018	Electra	2599.99
+Trek Verve+ - 2018	Trek	2299.99
+Trek Verve+ Lowstep - 2018	Trek	2299.99
+Electra Townie Commute Go! - 2018	Electra	2999.99
+Electra Townie Commute Go! Ladies' - 2018	Electra	2999.99
+Trek Powerfly 5 - 2018	Trek	3499.99
+Trek Powerfly 5 FS - 2018	Trek	4499.99
+Trek Powerfly 5 Women's - 2018	Trek	3499.99
+Trek Powerfly 7 FS - 2018	Trek	4999.99
+Trek Super Commuter+ 7 - 2018	Trek	3599.99
+Trek Super Commuter+ 8S - 2018	Trek	4999.99
+Trek Boone 5 Disc - 2018	Trek	3299.99
+Trek Boone 7 Disc - 2018	Trek	3999.99
+Trek Crockett 5 Disc - 2018	Trek	1799.99
+Trek Crockett 7 Disc - 2018	Trek	2999.99
+Surly Straggler - 2018	Surly	1549.00
+Surly Straggler 650b - 2018	Surly	1549.00
+Electra Townie Original 21D - 2018	Electra	559.99
+Electra Cruiser 1 - 2016/2017/2018	Electra	269.99
+Electra Tiger Shark 3i - 2018	Electra	899.99
+Electra Queen of Hearts 3i - 2018	Electra	749.99
+Electra Super Moto 8i - 2018	Electra	899.99
+Electra Straight 8 3i - 2018	Electra	909.99
+Electra Cruiser 7D - 2016/2017/2018	Electra	319.99
+Electra Moto 3i - 2018	Electra	639.99
+Electra Cruiser 1 Ladies' - 2018	Electra	269.99
+Electra Cruiser 7D Ladies' - 2016/2018	Electra	319.99
+Electra Cruiser 1 Tall - 2016/2018	Electra	269.99
+Electra Cruiser Lux 3i - 2018	Electra	529.99
+Electra Cruiser Lux 7D - 2018	Electra	479.99
+Electra Delivery 3i - 2016/2017/2018	Electra	959.99
+Electra Townie Original 21D EQ - 2017/2018	Electra	679.99
+Electra Cruiser 7D (24-Inch) Ladies' - 2016/2018	Electra	319.99
+Electra Cruiser 7D Tall - 2016/2018	Electra	319.99
+Electra Cruiser Lux 1 - 2016/2018	Electra	429.99
+Electra Cruiser Lux 1 Ladies' - 2018	Electra	429.99
+Electra Cruiser Lux 3i Ladies' - 2018	Electra	529.99
+Electra Cruiser Lux 7D Ladies' - 2018	Electra	479.99
+Electra Cruiser Lux Fat Tire 7D - 2018	Electra	639.99
+Electra Daydreamer 3i Ladies' - 2018	Electra	899.99
+Electra Koa 3i Ladies' - 2018	Electra	899.99
+Electra Morningstar 3i Ladies' - 2018	Electra	749.99
+Electra Relic 3i - 2018	Electra	849.99
+Electra Townie Balloon 8D EQ - 2016/2017/2018	Electra	749.99
+Electra Townie Balloon 8D EQ Ladies' - 2016/2017/2018	Electra	749.99
+Electra Townie Commute 27D Ladies - 2018	Electra	899.99
+Electra Townie Commute 8D - 2018	Electra	749.99
+Electra Townie Commute 8D Ladies' - 2018	Electra	699.99
+Electra Townie Original 21D EQ Ladies' - 2018	Electra	679.99
+Electra Townie Original 21D Ladies' - 2018	Electra	559.99
+Electra Townie Original 3i EQ - 2017/2018	Electra	659.99
+Electra Townie Original 3i EQ Ladies' - 2018	Electra	639.99
+Electra Townie Original 7D EQ - 2018	Electra	599.99
+Electra Townie Original 7D EQ Ladies' - 2017/2018	Electra	599.99
+Electra White Water 3i - 2018	Electra	749.99
+Electra Townie Go! 8i - 2017/2018	Electra	2599.99
+Electra Townie Commute Go! - 2018	Electra	2999.99
+Electra Townie Commute Go! Ladies' - 2018	Electra	2999.99
+Electra Townie Go! 8i Ladies' - 2018	Electra	2599.99
+Electra Townie Balloon 3i EQ - 2017/2018	Electra	749.99
+Electra Townie Balloon 7i EQ Ladies' - 2017/2018	Electra	899.99
+Electra Townie Commute 27D - 2018	Electra	899.99
+Electra Amsterdam Fashion 3i Ladies' - 2017/2018	Electra	899.99
+Electra Amsterdam Royal 8i - 2017/2018	Electra	1259.90
+Electra Amsterdam Royal 8i Ladies - 2018	Electra	1199.99
+Electra Townie Balloon 3i EQ Ladies' - 2018	Electra	799.99
+Electra Townie Balloon 7i EQ - 2018	Electra	899.99
+Trek MT 201 - 2018	Trek	249.99
+Strider Classic 12 Balance Bike - 2018	Strider	89.99
+Strider Sport 16 - 2018	Strider	249.99
+Strider Strider 20 Sport - 2018	Strider	289.99
+Trek Superfly 20 - 2018	Trek	399.99
+Trek Precaliber 12 Girl's - 2018	Trek	199.99
+Trek Kickster - 2018	Trek	159.99
+Trek Precaliber 12 Boy's - 2018	Trek	199.99
+Trek Precaliber 16 Boy's - 2018	Trek	209.99
+Trek Precaliber 16 Girl's - 2018	Trek	209.99
+Trek Precaliber 20 6-speed Boy's - 2018	Trek	289.99
+Trek Precaliber 20 6-speed Girl's - 2018	Trek	289.99
+Trek Precaliber 20 Boy's - 2018	Trek	229.99
+Trek Precaliber 20 Girl's - 2018	Trek	229.99
+Trek Precaliber 24 (7-Speed) - Boys - 2018	Trek	319.99
+Trek Precaliber 24 21-speed Boy's - 2018	Trek	369.99
+Trek Precaliber 24 21-speed Girl's - 2018	Trek	369.99
+Trek Precaliber 24 7-speed Girl's - 2018	Trek	319.99
+Trek Superfly 24 - 2017/2018	Trek	489.99
+Electra Cruiser 7D (24-Inch) Ladies' - 2016/2018	Electra	319.99
+Electra Cyclosaurus 1 (16-inch) - Boy's - 2018	Electra	279.99
+Electra Heartchya 1 (20-inch) - Girl's - 2018	Electra	319.99
+Electra Savannah 1 (20-inch) - Girl's - 2018	Electra	319.99
+Electra Soft Serve 1 (16-inch) - Girl's - 2018	Electra	279.99
+Electra Starship 1 16" - 2018	Electra	279.99
+Electra Straight 8 1 (16-inch) - Boy's - 2018	Electra	279.99
+Electra Straight 8 1 (20-inch) - Boy's - 2018	Electra	389.99
+Electra Superbolt 1 20" - 2018	Electra	319.99
+Electra Superbolt 3i 20" - 2018	Electra	369.99
+Electra Sweet Ride 1 (20-inch) - Girl's - 2018	Electra	319.99
+Electra Sweet Ride 3i (20-inch) - Girls' - 2018	Electra	369.99
+Electra Tiger Shark 1 (20-inch) - Boys' - 2018	Electra	319.99
+Electra Tiger Shark 3i (20-inch) - Boys' - 2018	Electra	369.99
+Electra Treasure 1 20" - 2018	Electra	319.99
+Electra Treasure 3i 20" - 2018	Electra	369.99
+Electra Under-The-Sea 1 16" - 2018	Electra	279.99
+Electra Water Lily 1 (16-inch) - Girl's - 2018	Electra	279.99
+Electra Townie Original 21D - 2018	Electra	559.99
+Electra Townie Balloon 3i EQ Ladies' - 2018	Electra	799.99
+Electra Townie Balloon 7i EQ - 2018	Electra	899.99
+Electra Townie Original 1 - 2018	Electra	449.99
+Electra Townie Go! 8i - 2017/2018	Electra	2599.99
+Electra Townie Original 21D EQ - 2017/2018	Electra	679.99
+Electra Townie Balloon 3i EQ - 2017/2018	Electra	749.99
+Electra Townie Balloon 7i EQ Ladies' - 2017/2018	Electra	899.99
+Electra Townie Balloon 8D EQ - 2016/2017/2018	Electra	749.99
+Electra Townie Balloon 8D EQ Ladies' - 2016/2017/2018	Electra	749.99
+Electra Townie Commute 27D - 2018	Electra	899.99
+Electra Townie Commute 27D Ladies - 2018	Electra	899.99
+Electra Townie Commute 8D - 2018	Electra	749.99
+Electra Townie Commute 8D Ladies' - 2018	Electra	699.99
+Electra Townie Original 1 Ladies' - 2018	Electra	449.99
+Electra Townie Original 21D EQ Ladies' - 2018	Electra	679.99
+Electra Townie Original 21D Ladies' - 2018	Electra	559.99
+Trek Checkpoint ALR 4 Women's - 2019	Trek	1699.99
+Trek Checkpoint ALR 5 - 2019	Trek	1999.99
+Trek Checkpoint ALR 5 Women's - 2019	Trek	1999.99
+Trek Checkpoint SL 5 Women's - 2019	Trek	2799.99
+Trek Checkpoint SL 6 - 2019	Trek	3799.99
+Trek Checkpoint ALR Frameset - 2019	Trek	3199.99
