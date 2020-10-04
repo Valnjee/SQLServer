@@ -1,0 +1,8 @@
+SELECT
+    product_name,
+    order_id
+FROM
+    production.products p
+LEFT JOIN sales.order_items o ON o.product_id = p.product_id
+ORDER BY
+    order_id;
