@@ -1,0 +1,21 @@
+CREATE TABLE sales.addresses (
+    address_id INT IDENTITY PRIMARY KEY,
+    street VARCHAR (255) NOT NULL,
+    city VARCHAR (50),
+    state VARCHAR (25),
+    zip_code VARCHAR (5)
+);
+
+//Create table before inserting records (data)
+
+INSERT INTO sales.addresses (street, city, state, zip_code) 
+SELECT
+    street,
+    city,
+    state,
+    zip_code
+FROM
+    sales.customers
+ORDER BY
+    first_name,
+    last_name; 
