@@ -1,0 +1,2 @@
+CREATE SCHEMA customer_services;
+GO
