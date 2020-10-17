@@ -1,0 +1,81 @@
+IF OBJECT_ID('sales.PresidentReportPeriod') IS NOT NULL DROP TABLE sales.PresidentReportPeriod;
+Create table sales.PresidentReportPeriod
+
+(
+
+StartDate date,
+
+EndDate date
+
+) WITH (DATA_COMPRESSION=PAGE);
+
+go
+
+Insert into sales.PresidentReportPeriod(StartDate,EndDate)
+
+values
+
+('1/1/1853','12/31/1853')
+
+,('5/5/1854','5/6/1854')
+
+,('1/1/1854','3/1/1854')
+
+,('1/1/1849','1/1/1853')
+
+,('1/1/1853','5/3/1854')
+
+,('1/20/1977','1/1/2020')
+,('1/20/1953','12/26/2006')
+,('3/4/1921','4/22/1994')
+,('4/3/1885','7/2/1923')
+,('4/15/1865','6/24/1908')
+,('3/4/1849','7/31/1875')
+,('3/4/1817','7/9/1850')
+,('1/4/1789','6/28/1836');
+
+IF OBJECT_ID('sales.PresidentReport') IS NOT NULL DROP TABLE sales.PresidentReport;
+Create table sales.PresidentReport
+
+(
+
+PresidentsAlive int not null,
+StartDate date,
+EndDate date,
+DaysAlive int,
+PresidentList varchar (1000)
+
+) WITH (DATA_COMPRESSION=PAGE);
+
+go
+
+
+WITH CTE_TableName AS (
+
+select Name,
+
+StartDate,
+
+DiedDate,
+
+DATEDIFF(Day,StartDate, DiedDate) as DaysAlive
+
+from sales.president
+
+)
+INSERT INTO sales.PresidentReport (PresidentsAlive, StartDate, EndDate, DaysAlive, PresidentList)
+
+SELECT Count(Name) PresidentsAlive, t2.StartDate, t2.EndDate, DATEDIFF(Day,t2.StartDate, t2.EndDate) as DaysAlive
+
+, STRING_AGG(Name, ',') AS PresidentList
+
+FROM CTE_TableName t1
+
+LEFT JOIN sales.PresidentReportPeriod t2 ON t1.StartDate >= t2.Startdate AND DiedDate > t2.EndDate
+
+WHERE t2.StartDate IS NOT NULL AND t2.EndDate IS NOT NULL
+
+GROUP BY t2.StartDate, t2.EndDate
+
+ORDER BY Count(Name) DESC, DATEDIFF(Day,t2.StartDate, t2.EndDate) DESC
+
