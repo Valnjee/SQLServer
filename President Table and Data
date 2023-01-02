@@ -4,11 +4,11 @@ Create table sales.President
 PresidentID INT IDENTITY(1,1) PRIMARY KEY,
 Name varchar(60),
 StartDate date,
-DiedDate date
+EndDate date
 ) WITH (DATA_COMPRESSION=PAGE);
 go
--- Data Source: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_date_of_death
-Insert into sales.President(Name,StartDate,DiedDate)
+-- Data Source: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_EndDate
+Insert into sales.President(Name,StartDate,EndDate)
 values
 ('George Washington','4/1/1789','12/14/1799')
 ,('Thomas Jefferson','3/4/1801','7/4/1826')
@@ -47,11 +47,12 @@ values
 ,('Harry S. Truman','4/12/1945','12/26/1972')
 ,('Lyndon B. Johnson','11/22/1963','1/22/1973')
 ,('Richard Nixon','1/20/1969','4/22/1994')
-,('Ronald Reagan','1/20/1981','6/5/2004')
-,('Gerald Ford','7/9/1974','12/26/2006')
-,('Jimmy Carter','1/20/1977',Null)
-,('George H. W. Bush','1/20/1989','11/30/2018')
-,('Bill Clinton','1/20/1993',Null)
-,('George W. Bush','1/20/2001',Null)
-,('Barack Obama','1/20/2009',Null)
-,('Donald Trump','1/20/2017',Null);
+,('Ronald Reagan','1/20/1981','1/20/1989')
+,('Gerald Ford','7/9/1974','9/9/1975')
+,('Jimmy Carter','1/20/1977','1/20/1981')
+,('George H. W. Bush','1/20/1989','1/20/1993')
+,('Bill Clinton','1/20/1993','1/20/2001')
+,('George W. Bush','1/20/2001','1/20/2009')
+,('Barack Obama','1/20/2009','1/20/2017')
+,('Donald Trump','1/20/2017','1/20/2021')
+,('Joseph Biden','1/20/2021',Null);
