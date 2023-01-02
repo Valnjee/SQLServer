@@ -40,9 +40,9 @@ select Name,
 
 StartDate,
 
-DiedDate,
+EndDate,
 
-DATEDIFF(Day,StartDate, DiedDate) as DayAlive
+DATEDIFF(Day,StartDate, EndDate) as DayAlive
 
 from sales.president
 
@@ -54,7 +54,7 @@ SELECT Count(Name) PresidentsAliveDuringPeriod, t2.StartDate, t2.EndDate, DATEDI
 
 FROM CTE_TableName t1
 
-LEFT JOIN sales.PresidentReportPeriod t2 ON t1.StartDate >= t2.Startdate AND DiedDate > t2.EndDate
+LEFT JOIN sales.PresidentReportPeriod t2 ON t1.StartDate >= t2.Startdate AND EndDate > t2.EndDate
 
 WHERE t2.StartDate IS NOT NULL AND t2.EndDate IS NOT NULL
 
