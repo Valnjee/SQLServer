@@ -50,7 +50,7 @@ values
 ,('Ronald Reagan','1/20/1981','6/5/2004')
 ,('Gerald Ford','7/9/1974','12/26/2006')
 ,('Jimmy Carter','1/20/1977',Null)
-,('George H. W. Bush','1/20/1989',Null)
+,('George H. W. Bush','1/20/1989','11/30/2018')
 ,('Bill Clinton','1/20/1993',Null)
 ,('George W. Bush','1/20/2001',Null)
 ,('Barack Obama','1/20/2009',Null)
